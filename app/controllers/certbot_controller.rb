@@ -1,8 +1,7 @@
 class CertbotController < Certbot::ApplicationController
   def show
-    challenge = params[:challenge]
-    if challenge == certbot_config.challenge
-      render text: certbot_config.token
+    if params[:token] == certbot_config.token
+      render text: certbot_config.key_authorization
     else
       render nothing: true, status: 404
     end

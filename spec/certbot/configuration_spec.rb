@@ -1,24 +1,24 @@
 RSpec.describe Certbot::Configuration do
   after do
-    ENV.delete('CERTBOT_CHALLENGE')
+    ENV.delete('CERTBOT_KEY_AUTHORIZATION')
     ENV.delete('CERTBOT_TOKEN')
   end
   describe '#initialize' do
-    context 'when ENV[CERTBOT_CHALLENGE] is set' do
-      let(:challenge) { 'aasdfasdf' }
+    context 'when ENV[CERTBOT_KEY_AUTHORIZATION] is set' do
+      let(:key_authorization) { 'aasdfasdf' }
       before do
-        ENV['CERTBOT_CHALLENGE'] = challenge
+        ENV['CERTBOT_KEY_AUTHORIZATION'] = key_authorization
         @config = Certbot::Configuration.new
       end
-      it { expect(@config.challenge).to eq challenge }
+      it { expect(@config.key_authorization).to eq key_authorization }
     end
     context 'when ENV[CERTBOT_TOKEN] is set' do
       let(:token) { 'aasdfasdf' }
       before do
-        ENV['CERTBOT_TOKEN'] = challenge
+        ENV['CERTBOT_TOKEN'] = token
         @config = Certbot::Configuration.new
       end
-      it { expect(@config.token).to_not eq token }
+      it { expect(@config.token).to eq token }
     end
   end
 end
