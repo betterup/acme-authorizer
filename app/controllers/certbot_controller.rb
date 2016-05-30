@@ -1,4 +1,4 @@
-class CertbotController < ActionController::Base
+class CertbotController < Certbot::ApplicationController
   def show
     challenge = params[:challenge]
     if challenge == certbot_config.challenge
