@@ -5,8 +5,7 @@ RSpec.describe CertbotController do
       let(:key_authorization) { 'authorization' }
       before do
         Certbot.configure do |config|
-          config.token = token
-          config.key_authorization = key_authorization
+          config.add_token(token, key_authorization)
         end
         get :show, token: token
       end

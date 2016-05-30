@@ -19,16 +19,21 @@ http://guides.rubyonrails.org/action_controller_overview.html#force-https-protoc
 
 ## Configuration
 
-By default, this library is configured via ENV variables.
+By default, this library is configured via pairs of ENV variables with the format:
 ```
-CERTBOT_TOKEN = Certbot challenge token
-CERTBOT_KEY_AUTHORIZATION = Certbot key authorization for valid request
+/CERTBOT_TOKEN_[0-9]+/
+/CERTBOT_KEY_AUTHORIZATION_[0-9]+/
+```
+
+for example:
+```
+CERTBOT_TOKEN_0=123123
+CERTBOT_KEY_AUTHORIZATION_0=123123
 ```
 
 The challenge and token can also be configured via Ruby API.
 ```ruby
 Certbot.configure do |config|
-  config.token = 'my_challenge_token'
-  config.key_authorization = 'my_key_authorization'
+  config.add_token('my_challenge_token', 'my_key_authorization')
 end
 ```
