@@ -9,9 +9,9 @@ Gem::Specification.new do |s|
   s.version     = Certbot::VERSION
   s.authors     = ['BetterUp Developers']
   s.email       = ['developers@betterup.co']
-  s.homepage    = 'TODO'
-  s.summary     = 'TODO: Summary of Certbot.'
-  s.description = 'TODO: Description of Certbot.'
+  s.homepage    = 'http://github.com/betterup/certbot'
+  s.summary     = 'Rails engine for generating certs with certbot'
+  s.description = 'Rails engine for generating certs with certbot using the challenge and response method'
   s.license     = 'MIT'
 
   s.files = Dir['{app,config,db,lib}/**/*', 'MIT-LICENSE', 'Rakefile', 'README.md']
