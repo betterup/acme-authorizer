@@ -1,10 +1,10 @@
-RSpec.describe CertbotController do
+RSpec.describe Acme::Authorizer::TokensController do
   describe '#show' do
     context 'with valid token' do
       let(:token) { 'valid_token' }
       let(:key_authorization) { 'authorization' }
       before do
-        Certbot.configure do |config|
+        Acme::Authorizer.configure do |config|
           config.add_token(token, key_authorization)
         end
         get :show, token: token

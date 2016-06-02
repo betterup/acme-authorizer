@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    certbot (0.0.1.pre.3)
+    acme-authorizer (0.0.1.pre.3)
       rails (~> 4.2.6)
 
 GEM
@@ -126,7 +126,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  certbot!
+  acme-authorizer!
   rspec-rails
   shoulda-matchers
   sqlite3
