@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    acme-authorizer (0.0.1.pre.3)
+    acme-authorizer (0.1.0)
       rails (~> 4.2.6)
 
 GEM
