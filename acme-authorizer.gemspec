@@ -1,17 +1,17 @@
 $:.push File.expand_path('../lib', __FILE__)
 
 # Maintain your gem's version:
-require 'certbot/version'
+require 'acme/authorizer/version'
 
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
-  s.name        = 'certbot'
-  s.version     = Certbot::VERSION
+  s.name        = 'acme-authorizer'
+  s.version     = Acme::Authorizer::VERSION
   s.authors     = ['BetterUp Developers']
   s.email       = ['developers@betterup.co']
-  s.homepage    = 'http://github.com/betterup/certbot'
-  s.summary     = 'Rails engine for generating certs with certbot'
-  s.description = 'Rails engine for generating certs with certbot using the challenge and response method'
+  s.homepage    = 'http://github.com/betterup/acme-authorizer'
+  s.summary     = 'Rails engine for generating SSL certificates with ACME challenges'
+  s.description = 'Rails engine for generating SSL certificates using the ACME challenge and response method'
   s.license     = 'MIT'
 
   s.files = Dir['{app,config,db,lib}/**/*', 'MIT-LICENSE', 'Rakefile', 'README.md']
