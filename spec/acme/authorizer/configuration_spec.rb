@@ -18,6 +18,17 @@ RSpec.describe Acme::Authorizer::Configuration do
       it { expect(@config.valid_token?(token)).to be true }
       it { expect(@config.key_authorization_for_token(token)).to eq key_authorization }
     end
+    context 'when ENV[ACME_TOKEN_1] and ENV[ACME_KEY_1] is set' do
+      let(:token) { 'aasdfasdf' }
+      let(:key_authorization) { 'aasdfasdf' }
+      before do
+        ENV['ACME_TOKEN_1'] = token
+        ENV['ACME_KEY_1'] = key_authorization
+        @config = described_class.new
+      end
+      it { expect(@config.valid_token?(token)).to be true }
+      it { expect(@config.key_authorization_for_token(token)).to eq key_authorization }
+    end
   end
 
   describe '#add_token' do
