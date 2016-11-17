@@ -11,11 +11,8 @@ gem 'acme-authorizer'
 ```
 
 NOTE: the ACME http-01 challenge/response *must* be served over HTTP without
-SSL.  This means that your Rails application can not have the `force_ssl` flag
-set in your `config/application.rb`.
-
-In order to enable application wide SSL, use this alternative method:
-http://guides.rubyonrails.org/action_controller_overview.html#force-https-protocol
+SSL. The ACME URL endpoint will opt out of `config.force_ssl` if it is set
+using `config.ssl_options`.
 
 ## Configuration
 
