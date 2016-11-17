@@ -1,5 +1,5 @@
 module Acme
   module Authorizer
-    VERSION = '0.1.2'.freeze
+    VERSION = '2.0.0'.freeze
   end
 end
