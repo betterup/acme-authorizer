@@ -1,6 +1,6 @@
 module Acme
   module Authorizer
-    class TokensController < ApplicationController
+    class TokensController < ::Acme::Authorizer::ApplicationController
       def show
         token = params[:token]
         if acme_authorizer_config.valid_token?(token)
