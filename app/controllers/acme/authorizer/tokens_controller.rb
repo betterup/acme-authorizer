@@ -4,9 +4,9 @@ module Acme
       def show
         token = params[:token]
         if acme_authorizer_config.valid_token?(token)
-          render text: acme_authorizer_config.key_authorization_for_token(token)
+          render plain: acme_authorizer_config.key_authorization_for_token(token)
         else
-          render nothing: true, status: 404
+          head :not_found
         end
       end
 
