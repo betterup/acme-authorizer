@@ -7,7 +7,7 @@ RSpec.describe Acme::Authorizer::TokensController do
         Acme::Authorizer.configure do |config|
           config.add_token(token, key_authorization)
         end
-        get :show, token: token
+        get :show, params: { token: token }
       end
       it 'renders key authorization' do
         expect(response.body).to eq key_authorization
@@ -15,7 +15,7 @@ RSpec.describe Acme::Authorizer::TokensController do
     end
     context 'with invalid token' do
       before do
-        get :show, token: 'invalid_token'
+        get :show, params: { token: 'invalid_token' }
       end
       it { expect(response.status).to eq 404 }
     end
